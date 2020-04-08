@@ -9,20 +9,22 @@ function Player(name) {
   this.name = name;
   this.diceRoll = 0;
   this.roundScore = 0;
-  
+  this.active = true
 }
 
+function activeUser() {
+  if (player1
+}
 // Random number -------
 
 Player.prototype.roll = function() {
 var randomRoll = Math.floor((Math.random() * 6) + 1);
 
   if (randomRoll != 1) {
-    turn.push(randomRoll); //need to determine when turn ends
+    turn.push(randomRoll); //need to determine when turn ends and whos turn it is
   } else {
     turn = [0];
     return "Rolled a 1!"
-    
   }
   return roll;
 }

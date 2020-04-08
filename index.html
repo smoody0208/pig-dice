@@ -15,6 +15,47 @@
       <h1>Pig Dice</h1>
     </div>  
   </div>
+  <div class="container">
+    <form id="names">
+      <label for="player1">Player One Name</label>
+      <input type="text" id="playerOneName">
+      <label for="player2">Player Two Name</label>
+      <input type="text" id="playerTwoName">
+      
+      <button type="submit" id="start" class="btn btn-danger">Play Pig Dice</button>
+    </form>
   
+    
+    <div class="row" id="game">
+      <center><div class="col-sm-4" id="player-one">
+        <h2>Player One: <span class="player1-input"></span></h2>
+        <button type="click" id="play-one">ROLL</button>
+        <button type="click" id="hold-one">HOLD</button>
+        <div>
+          <h4>Roll Score: </h4><span id="player1-roll"></span>
+
+          <h4>Turn Score: </h4>
+          <span id="player1-score"></span>
+
+          <h2>Total Score:</h2>
+          <span id="player1-total-score"></span>
+        </div>
+      </div>
+      <div class="col-sm-4" id="player-two">
+        <h2>Player Two: <span class="player2-input"></span></h2>
+        <button type="click" id="play-two">ROLL</button>
+        <button type="click" id="hold-two">HOLD</button>
+        <div>
+          <h4>Roll Score: </h4><span id="player2-roll"></span>
+
+          <h4>Turn Score: </h4>
+          <span id="player2-score"></span>
+
+          <h2>Total Score:</h2>
+          <span id="player2-total-score"></span>
+        </div></center>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
