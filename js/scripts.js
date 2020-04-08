@@ -18,6 +18,7 @@ function SwitchUser() {
     currentPlayerId = 1 //makes player2 currentPLayerId
   } else {
     currentPlayerId = 0 //makes player1 currentplayer
+    
   }
 }
 
@@ -26,7 +27,11 @@ Player.prototype.roll = function() {
 var randomRoll = Math.floor((Math.random() * 6) + 1);//
   if (randomRoll != 1) {
     turnPoints += randomRoll; //pushes randomRoll into turn array
+    if (this.totalScore + turnPoints >= 100) {
+      alert(this.name + " Congrats! You won!");
+    }
   } else {
+    alert(this.name + ", you rolled a 1! Your turn is over and you lose your turn points!");
     SwitchUser(); 
   }
   return randomRoll;
@@ -34,16 +39,11 @@ var randomRoll = Math.floor((Math.random() * 6) + 1);//
 
 //Hold Button Function
 Player.prototype.hold = function() {
-this.totalScore += this.turnPoints;//add turnPoints to players roundscore
+this.totalScore += turnPoints;//add turnPoints to players roundscore
 SwitchUser();//switch players
+console.log(turnPoints);
 } 
 
-// Check if Winner
-Player.prototype.checkIfWinner = function() {
-  if (this.totalScore >= 100) {
-    alert(this.name + " Congrats! You won!");
-  }
-}
 // User Interface ------
 
 $(document).ready(function() {
@@ -54,28 +54,35 @@ $(document).ready(function() {
     var playerTwoInput = $("input#playerTwoName").val();
     $(".player1-input").text(playerOneInput);
     $(".player2-input").text(playerTwoInput);
+
+    $("#names").hide();
+    $("#game").show();
     console.log(playerOneInput);
   })
   $("#play-one").click(function(){
     var playerOneRoll = player1.roll();
     $("#player1-roll").text(playerOneRoll);
-  
+    $("#player1-score").text(turnPoints);
   })
 
   $("#hold-one").click(function(){
-    var playerOneScore = player1.hold();
-    $("#player1-total-score").text(playerOneScore);
+    $("#player-one").toggle();
+    player1.hold();
+    $("#player1-total-score").text(player1.totalScore);
+
   })
 
   $("#play-two").click(function(){
     var playerTwoRoll = player2.roll();
     $("#player2-roll").text(playerTwoRoll);
+    $("#player2-score").text(turnPoints);
+    
   })
 
   $("#hold-two").click(function(){
-    var playerTwoScore = player2.hold();
-    $("#player2-total-score").text(playerTwoScore);
-    console.log(playerTwoScore);
+    $("#player-two").toggle();
+    player2.hold();
+    $("#player2-total-score").text(player2.totalScore);
   })
 
 

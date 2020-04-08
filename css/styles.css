@@ -2,12 +2,15 @@
   text-align: center;
   text-decoration: underline;
   font-weight: bold;
-  text-shadow: 3px 3px 5px black;
+  text-shadow: 4px 4px 5px rgb(243, 37, 10);
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
   color: white;
   font-family: cursive;
   margin: 25px;
   border-style: double;
-  background-image: url(https://bit.ly/2wlLcG6);
+  background-image: url(https://bit.ly/2JSzo1c);
   background-position: center;
   /* background-size: 685px 350px; */
 }
@@ -15,3 +18,9 @@
 body {
   background-color: lightgray;
 }
+
+#game {
+  display: none;
+}
+
+
