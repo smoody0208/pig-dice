@@ -23,4 +23,7 @@ body {
   display: none;
 }
 
-
+#names {
+  text-align: center;
+  /* margin: 25px; */
+}
