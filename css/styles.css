@@ -16,7 +16,9 @@
 }
 
 body {
+  color: black;
   background-color: lightgray;
+  background-image: url(https://bit.ly/2yIir7j);
 }
 
 #game {

@@ -16,8 +16,13 @@ function SwitchUser() {
   turnPoints = 0; //this will clear turn points when players switch
   if (currentPlayerId === 0) { // checking to see if current player is index 0
     currentPlayerId = 1 //makes player2 currentPLayerId
+    $("#player-one").fadeOut();
+    $("#player-two").fadeIn();
+
   } else {
     currentPlayerId = 0 //makes player1 currentplayer
+    $("#player-two").fadeOut();
+    $("#player-one").fadeIn();
     
   }
 }
@@ -70,7 +75,6 @@ $(document).ready(function() {
     $("#player-one").fadeOut();
     $("#player-two").fadeIn();
     $("#player1-total-score").text(player1.totalScore);
-
   })
 
   $("#play-two").click(function(){
@@ -84,7 +88,7 @@ $(document).ready(function() {
     player2.hold();
     $("#player-one").fadeIn();
     $("#player-two").fadeOut();
-    $("#player2-total-score").text(player.totalScore);
+    $("#player2-total-score").text(player2.totalScore);
   })
 
 
