@@ -12,6 +12,8 @@ By _Sean_VanLeeuwen & _Spencer_Moody_ 04.08.20
 
 * Open Index.html in web browser
 
+* Or visit: https://smoody0208.github.io/pig-dice/
+
 ## Known Bugs
 
 None
