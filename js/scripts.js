@@ -66,8 +66,9 @@ $(document).ready(function() {
   })
 
   $("#hold-one").click(function(){
-    $("#player-one").toggle();
     player1.hold();
+    $("#player-one").fadeOut();
+    $("#player-two").fadeIn();
     $("#player1-total-score").text(player1.totalScore);
 
   })
@@ -80,9 +81,10 @@ $(document).ready(function() {
   })
 
   $("#hold-two").click(function(){
-    $("#player-two").toggle();
     player2.hold();
-    $("#player2-total-score").text(player2.totalScore);
+    $("#player-one").fadeIn();
+    $("#player-two").fadeOut();
+    $("#player2-total-score").text(player.totalScore);
   })
 
 
