@@ -50,7 +50,6 @@ console.log(turnPoints);
 } 
 
 // User Interface ------
-
 $(document).ready(function() {
   $("form#names").submit(function(event) {
     event.preventDefault();
@@ -59,11 +58,11 @@ $(document).ready(function() {
     var playerTwoInput = $("input#playerTwoName").val();
     $(".player1-input").text(playerOneInput);
     $(".player2-input").text(playerTwoInput);
-
     $("#names").hide();
     $("#game").show();
     console.log(playerOneInput);
   })
+
   $("#play-one").click(function(){
     var playerOneRoll = player1.roll();
     $("#player1-roll").text(playerOneRoll);
@@ -81,7 +80,6 @@ $(document).ready(function() {
     var playerTwoRoll = player2.roll();
     $("#player2-roll").text(playerTwoRoll);
     $("#player2-score").text(turnPoints);
-    
   })
 
   $("#hold-two").click(function(){
@@ -90,8 +88,4 @@ $(document).ready(function() {
     $("#player-two").fadeOut();
     $("#player2-total-score").text(player2.totalScore);
   })
-
-
-}); 
-
-
+});
